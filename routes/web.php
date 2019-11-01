@@ -21,5 +21,4 @@ Route::get('about', 'HomeController@about');
 
 Route::get('search', 'HomeController@search');
 
-Route::get('autocomplete', 'AjaxAutocompleteController@index');
 Route::get('searchajax', ['as'=>'searchajax','uses'=>'AjaxAutocompleteController@searchResponse']);

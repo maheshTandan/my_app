@@ -8,7 +8,7 @@
 
 @if(isset($result))
 <div class="container">
-    <form action="search">
+    <form id="submit" action="search">
   <input type="text" value="@if(isset($search)){{$search}}@endif" class="form-control autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
   
   <br>
@@ -91,14 +91,11 @@
                 });
            },
            select: function( event, ui ) {
-               var data = ui.item.data;           
-               id_arr = $(this).attr('id');
-               id = id_arr.split("_");
-               elementId = id[id.length-1];
-               $('#countryname_'+elementId).val(data.name);
+               $('#submit').submit();
            }
        });
        
        
     });
+
     </script>
