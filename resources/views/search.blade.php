@@ -8,12 +8,23 @@
 
 @if(isset($result))
 <div class="container">
-    <form id="submit" action="search">
-  <input type="text" value="@if(isset($search)){{$search}}@endif" class="form-control autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
-  
-  <br>
-  <center><button type="submit" class="btn btn-primary"><i>Search</i></button></center>
-</form>
+  <div class="row">
+    <div class="col-sm-2">
+      
+    </div>
+    <div class="col-sm-7">
+      <form id="submit" action="search">
+      
+        <input type="text" value="@if(isset($search)){{$search}}@endif" class="form-control autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
+        <br>
+        
+      
+    </div>
+    <div class="col-sm-3">
+      <button type="submit" class="btn btn-primary"><i>Search</i></button>
+    </div>
+    </form>
+  </div>
 </div>
 
 <br>

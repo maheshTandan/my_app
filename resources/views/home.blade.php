@@ -14,12 +14,22 @@
 @endif
 
 <div class="container">
-    <form id="submit" action="search">
-  <input type="text" class="form-control autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
-  
-  <br>
-  <center><button type="submit" class="btn btn-primary"><i>Search</i></button></center>
-</form>
+  <div class="row">
+    <div class="col-sm-2">
+      
+    </div>
+    <div class="col-sm-8">
+      <form id="submit" action="search">
+        <input type="text" class="form-control autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
+        <br>
+        <center><button type="submit" class="btn btn-primary"><i>Search</i></button></center>
+      </form>
+    </div>
+    <div class="col-sm-2">
+      
+    </div>
+      
+  </div>
 </div>
 
   
