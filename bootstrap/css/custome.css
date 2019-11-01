@@ -4,25 +4,27 @@
 
 /* Style the search field */
 form.example input[type=text] {
-  padding: 10px;
+  padding: 17px;
   font-size: 17px;
   border: 1px solid grey;
   float: left;
   width: 80%;
   background: #f1f1f1;
+  border-radius: 30px 0px 0px 30px;
 }
 
 /* Style the submit button */
 form.example button {
   float: left;
   width: 20%;
-  padding: 10px;
+  padding: 17px;
   background: #2196F3;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
   border-left: none; /* Prevent double borders */
   cursor: pointer;
+  border-radius: 0px 30px 30px 0px;
 }
 
 form.example button:hover {

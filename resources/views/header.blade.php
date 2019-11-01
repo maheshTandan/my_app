@@ -9,13 +9,13 @@
 
 <link rel="stylesheet" href="{{ URL::asset('bootstrap/css/custome.css') }}" />
 
-<link rel="stylesheet" href="{{ URL::asset('bootstrap/css/font-awesome.min.css') }}" />
+<link rel="stylesheet" href="{{ URL::asset('bootstrap/css/jquery-ui.min.css') }}" />
 
 <script type="text/javascript" src="{{ URL::asset('bootstrap/js/jquery.min.js') }}"></script>
 
-<script type="text/javascript" src="{{ URL::asset('bootstrap/js/popper.min.js') }}"></script>
-
 <script type="text/javascript" src="{{ URL::asset('bootstrap/js/bootstrap.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ URL::asset('bootstrap/js/jquery-ui.min.js') }}"></script>
 
 </head>
 <body>
