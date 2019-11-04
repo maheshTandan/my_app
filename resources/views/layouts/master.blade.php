@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>SubhKuch.com</title>
+  <title>@yield('title')</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  
@@ -48,3 +48,12 @@
     </div>
   </div>
 </nav>
+<!-- WEB CONTENT START FROM HERE -->
+
+@section('content')
+
+@show
+
+<!-- WEB CONTENT ENDS HERE -->
+</body>
+</html>

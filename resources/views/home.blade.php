@@ -1,15 +1,19 @@
 <!-- HEADER INCLUDED -->
-@include('header')
+@extends('layouts.master')
 <!-- ///HEADER INCLUDED -->
 
+<!-- TITLE IS HERE -->
+@section('title', 'SubhKuch.com')
+
+@section('content')
 <br>
 <!----FOR VALIDATION ERRORS---->
 @if ($errors->any())
   <script>
-  	// FOR SEARCH BAR GET RED IF EMPTY
-  	$(document).ready(function(){
-  		$("#countryname_1").css({"border":"1px solid red"});
-  	});
+    // FOR SEARCH BAR GET RED IF EMPTY
+    $(document).ready(function(){
+      $("#countryname_1").css({"border":"1px solid red"});
+    });
 </script>
 @endif
 
@@ -20,8 +24,11 @@
     </div>
     <div class="col-sm-8">
       <form id="submit" action="search">
-        <input type="text" class="form-control autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
+        @csrf
+        <span id="border_bottom">
+        <input type="text" class="autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
         <br>
+        </span>
         <center><button type="submit" class="btn btn-primary"><i>Search</i></button></center>
       </form>
     </div>
@@ -31,8 +38,6 @@
       
   </div>
 </div>
-
-  
    
   </div>
   <br>
@@ -46,9 +51,7 @@
 <!-- /.container -->
 
 
-<!-- FOOTER INCLUDED -->
-@include('footer')
-<!-- ///FOOTER INCLUDED -->
+<!-- JQUERY SCRIPT START HERE -->
 <script type="text/javascript">
               
     //autocomplete script
@@ -88,3 +91,5 @@
     });
 
     </script>
+
+@endsection

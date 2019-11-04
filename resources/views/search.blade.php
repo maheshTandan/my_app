@@ -1,11 +1,12 @@
 <!-- HEADER INCLUDED -->
-@include('header')
+@extends('layouts.master')
 <!-- ///HEADER INCLUDED -->
 
+<!-- TITLE IS HERE -->
+@section('title', 'SubhKuch.com')
+
+@section('content')
 <br>
-
-
-
 @if(isset($result))
 <div class="container">
   <div class="row">
@@ -14,13 +15,15 @@
     </div>
     <div class="col-sm-7">
       <form id="submit" action="search">
-      
-        <input type="text" value="@if(isset($search)){{$search}}@endif" class="form-control autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
+      <span id="border_bottom">
+        @csrf
+        <input type="text" value="@if(isset($search)){{$search}}@endif" class="autocomplete_txt" placeholder="Search.." autocomplete="off" data-type="countryname" id="countryname_1" name='countryname'>
+      </span>
         <br>
         
       
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-3 mt-3">
       <button type="submit" class="btn btn-primary"><i>Search</i></button>
     </div>
     </form>
@@ -29,32 +32,31 @@
 
 <br>
 
-<div class="container border border-dark" id="search_main" style="display:;">
-<table class="table">
-    <tr>
-        <th>S.N</th>
-        <th>Website Name</th>
-        <th>Link</th>
-        <th>Votes</th>
-    </tr>
-    <tr>
-        @php
-        $key = 1;
-        @endphp
-        @foreach ($result as $user)
-            <tr>
-                <td>{{ $key }}</td>
-                <td>{{ $user->site_name }}</td>
-                <td><a class="btn btn-primary btn-sm" target="blank" href="{{ $user->site_link }}">Goto Website</a></td>
-                <td>{{ $user->up_votes }}</td>
-                @php
-                    $key++;
-                @endphp
-            </tr>
-        @endforeach
-
-    </tr>
-</table>
+<div class="container" id="search_main" style="width: 60%;">
+<div class="row">
+  
+  
+    @foreach($result as $user)
+  <!--  <a target="blank" href="{{ $user->site_link }}" class="col-sm- border search_items">
+      <center><b>{{$user->site_name}}</b></center>
+      {{ $user->type }}<br>
+      {{ $user->up_votes }}
+      <p class="little">{{ $user->detail }}</p>
+    </a> -->
+    <div class="col-sm-3">
+      <a target="blank" href="{{ $user->site_link }}" class="search_items_anchor">
+      <div class="py-1 px-3 search_items mb-2 mt-2">
+      <center><b>{{$user->site_name}}</b></center>
+      {{ $user->type }}<br>
+      {{ $user->up_votes }}
+      <p class="little">{{ $user->detail }}</p>
+      </div>
+      </a>
+    </div>
+  @endforeach
+  
+  
+</div>
 </div>
 @endif
 
@@ -67,10 +69,6 @@
 </div>
 
 <!-- /.container -->
-
-<!-- FOOTER INCLUDED -->
-@include('footer')
-<!-- ///FOOTER INCLUDED -->
 <script type="text/javascript">
               
     //autocomplete script
@@ -110,3 +108,4 @@
     });
 
     </script>
+@endsection

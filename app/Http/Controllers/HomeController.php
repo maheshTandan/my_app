@@ -27,7 +27,7 @@ class HomeController extends Controller
         ]);
     	$search  = addslashes($request->countryname);       
 
-    	$result = DB::select("SELECT *  FROM `result` WHERE `key_word` LIKE '%$search%' ORDER BY up_votes DESC LIMIT 0,10");
+    	$result = DB::select("SELECT * FROM `result` WHERE `key_word` LIKE '%$search%' AND `status` = '1' ORDER BY up_votes DESC LIMIT 0,10");
 
     	return view('search',['search'=>$search, 'result'=>$result]);	
     }
